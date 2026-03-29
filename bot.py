@@ -128,6 +128,6 @@ async def stop(interaction: discord.Interaction):
         bot.queue[interaction.guild.id] = []
         await vc.disconnect()
         await interaction.response.send_message("⏹️ ബോട്ട് ഡിസ്‌കണക്ട് ആയി.")
+import os
+bot.run(os.getenv('DISCORD_TOKEN'))
 
-# നിങ്ങളുടെ ടോക്കൺ ഇവിടെ ചേർത്തു
-bot.run('MTQ4NzA0OTM5NzM5MTg1NTY0Nw.G2uySq.8wwP82hOwgQcEMoAlELPNSEYfF2Rmh2-yYky0g')
