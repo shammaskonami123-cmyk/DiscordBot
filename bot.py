@@ -164,4 +164,24 @@ async def stop(interaction: discord.Interaction):
         await vc.disconnect()
         await interaction.response.send_message("⏹️ ബോട്ട് ഡിസ്‌കണക്ട് ആയി.")
 
-bot.run(os.getenv('DISCORD_TOKEN'))
+import discord
+
+intents = discord.Intents.default()
+intents.messages = True
+intents.guilds = True
+intents.presences = True
+
+client = discord.Client(intents=intents)
+
+@client.event
+async def on_ready():
+    print(f"Bot is online as {client.user}")
+
+# Example command
+@client.event
+async def on_message(message):
+    if message.content == "!ping":
+        await message.channel.send("Pong!")
+
+# Direct token, LAST LINE
+client.run("MTQ4NzA0OTM5NzM5MTg1NTY0Nw.G9Ue1r.nZOa-ZOf3BgN_EBRwRDJS5mBOH1h0m72sO5oV0")
