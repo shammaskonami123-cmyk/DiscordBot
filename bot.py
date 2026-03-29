@@ -130,4 +130,4 @@ async def stop(interaction: discord.Interaction):
         await interaction.response.send_message("⏹️ ബോട്ട് ഡിസ്‌കണക്ട് ആയി.")
 
 # നിങ്ങളുടെ ടോക്കൺ ഇവിടെ ചേർത്തു
-bot.run('MTQ4NzA0OTM5NzM5MTg1NTY0Nw.GSN1d6.9ZfVferFBUtOaFSunrqEGi-bom9Qfeeu0lEBOI')
+bot.run('MTQ4NzA0OTM5NzM5MTg1NTY0Nw.G2uySq.8wwP82hOwgQcEMoAlELPNSEYfF2Rmh2-yYky0g')
