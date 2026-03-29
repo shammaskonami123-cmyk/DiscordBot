@@ -1,3 +1,24 @@
+from flask import Flask
+from threading import Thread
+import os
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is alive!"
+
+def run():
+    # Render നൽകുന്ന പോർട്ട് ഉപയോഗിക്കുന്നു, അല്ലെങ്കിൽ 8080
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
+# ഇത് നിങ്ങളുടെ bot.run-ന് തൊട്ട് മുകളിൽ വിളിക്കണം
+keep_alive()
 import discord
 from discord.ext import commands
 from discord import app_commands
